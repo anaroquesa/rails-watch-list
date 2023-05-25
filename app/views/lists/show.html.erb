@@ -1,0 +1,13 @@
+<h1> <%= @list.name %> </h1>
+<div class="container">
+  <ul class="list-group">
+                                <% @list.movies.each do |movie| %>
+    <li class="list-group-item"><%= movie.title %></li>
+                                <% end %>
+  </ul>
+
+  <div class="d-flex mt-2">
+    <button class="btn btn-dark col"><%= link_to 'ALL LISTS', lists_path %></button>
+    <button class="btn btn-success"><%= link_to 'CREATE BOOKMARK',  new_list_bookmark_path(@list) %></button>
+  </div>
+</div>
